@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://logging.apache.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.assignment.kurrant.BoardMapper">
+    <insert id="insert" parameterType="string">
+        INSERT INTO cms_article(board_id, title, content_html, content_string)
+        VALUES(0, #{content}, #{content})
+    </insert>
+    <delete id="delete" parameterType="biginteger">
+        DELETE FROM cms_article WHERE article_id = #{id}
+    </delete>
+    <select id="list" resultType="cms_article_vo">
+        SELECT * FROM cms_article
+    </select>
+</mapper>
